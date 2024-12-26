@@ -133,6 +133,12 @@ app.get("/todos",async (req:any,res:any)=>{
     const response=await client.todo.findMany({
         where:{
             userId:2
+        },
+        select:{
+            user:true,
+           
+            title:true,
+            description:true
         }
     })
     res.send({
